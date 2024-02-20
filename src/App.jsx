@@ -4,7 +4,7 @@ function App() {
   const [counter, setCounter] = useState(0);
   const [inputValue, setInputValue] = useState(1);
   // const [count, setCount] = useState(0);
-  // optimal solution: only renders when inputvalue dependency changes
+  // optimal solution: only renders when inputvalue dependency changes [inputvalue render will happen sequentially]
   let count = useMemo(()=>{
     let finalCount=0;
     for(let i=1; i<=inputValue; i++){
@@ -13,7 +13,7 @@ function App() {
     return finalCount;
   }, [inputValue])
 
-  // most used, less optimal solution:
+  // most used, less optimal solution:[2 renders will happen 1-> inputValue render, 2-> count render]
 
   // useEffect(()=>{
   //     let finalCount =0;
