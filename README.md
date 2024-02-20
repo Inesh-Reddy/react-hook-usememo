@@ -15,7 +15,7 @@ Let's understand `UseMemo` by doing some assignments:
         Note:- Everything needs to be inside App. Also not use functions inside the App component.
 
 
-The above appraoch will renders everythig inside the App component.. if we don't use `useMemo`. Ofcourse, there are other ways ..the optimal appraoach is using useMemo. 
+- The above appraoch will renders everythig inside the App component.. if we don't use `useMemo`. Ofcourse, there are other ways ..the optimal appraoach is using useMemo. 
 
 making use of `useMemo` will stop the unnecessary renders.
 
