@@ -37,7 +37,8 @@ making use of `useMemo` will stop the unnecessary renders.
          }
 
 - The  other close to  optimal solution is  :
-    //[2 renders will happen : 1-> inputValue render, 2-> count render].
+    [2 renders will happen : 1-> inputValue render, 2-> count render].
+  
     Using useEffect : 
         
 
