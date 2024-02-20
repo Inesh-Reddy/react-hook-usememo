@@ -3,7 +3,7 @@ import { useState, useMemo } from "react";
 function App() {
   const [counter, setCounter] = useState(0);
   const [inputValue, setInputValue] = useState(1);
-
+  // const [count, setCount] = useState(0);
   // optimal solution: only renders when inputvalue dependency changes
   let count = useMemo(()=>{
     let finalCount=0;
@@ -12,6 +12,17 @@ function App() {
     }
     return finalCount;
   }, [inputValue])
+
+  // most used, less optimal solution:
+
+  // useEffect(()=>{
+  //     let finalCount =0;
+  //     for (let i = 1; i <= inputValue; i++) {
+  //         finalCount = finalCount + i;
+  //     }
+  //     setCount(finalCount);
+  // },[inputValue])
+
 
   //ugly solution: renders all the time(even if the inputvalue doesn't chage)
   // let count = 0;

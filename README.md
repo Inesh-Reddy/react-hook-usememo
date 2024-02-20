@@ -12,7 +12,7 @@ Let's understand `UseMemo` by doing some assignments:
         1. Increases a counter by 1.
         2. Lets user put a value in an input box (n) and you need to show sum from 1-n.
 
-        Note:- Everything needs to be inside App. Also not use functions inside the App component.
+        Note:- Everything needs to be inside App.
 
 
 - The above appraoch will renders everythig inside the App component.. if we don't use `useMemo`. Ofcourse, there are other ways ..the optimal appraoach is using useMemo. 
@@ -30,8 +30,24 @@ making use of `useMemo` will stop the unnecessary renders.
         }, [inputValue])
 
         //ugly solution: renders all the time(even if the inputvalue doesn't chage).
-        
+
          let count = 0;
          for (let i = 1; i <= inputValue; i++) {
            count = count + i;
          }
+
+- The  other close to  optimal solution is  :
+    
+    Using useEffect : 
+        
+
+        add a state varaible :
+            const [count, setCount] = useState();
+
+        useEffect(()=>{
+            let finalCount =0;
+            for (let i = 1; i <= inputValue; i++) {
+                finalCount = finalCount + i;
+            }
+            setCount(finalCount);
+        },[inputValue])
