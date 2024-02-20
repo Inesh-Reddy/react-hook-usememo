@@ -19,6 +19,8 @@ Let's understand `UseMemo` by doing some assignments:
 
 making use of `useMemo` will stop the unnecessary renders.
 
+        useMemo : is for on the go optimisation.
+
         // optimal solution: only renders when inputvalue dependency changes [inputvalue render will happen sequentially].
 
         let count = useMemo(()=>{
@@ -40,7 +42,7 @@ making use of `useMemo` will stop the unnecessary renders.
     [2 renders will happen : 1-> inputValue render, 2-> count render].
   
     Using useEffect : 
-        
+           This is mainly used for side effects in the lifecycle changes
 
         add a state varaible :
             const [count, setCount] = useState();
